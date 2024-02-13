@@ -42,7 +42,7 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 - Block .LNK files entirely if not used by org users. (GPO)
 - Prefer Windows 10 on laptops and Desktops when possible, even better is RHEL desktop when windows specific applications are not required.
 - Prefer RHEL Servers over Windows, if Very High Risk Organization then use Gentoo with [Patches](https://grsecurity.net/features) as server.
-- Always use SELinux policies (On RHEL & Gentoo) and use whitelist methadology (BLOCK EVERYTHING BY DEFAULT).
+- Always use SELinux policies (On RHEL & Gentoo) and use whitelist methodology (BLOCK EVERYTHING BY DEFAULT).
 - For RHEL servers prefer using Pre-CIS-Hardened Images.
 - Say it with me GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
 
