@@ -49,15 +49,6 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 - For RHEL servers prefer using Pre-CIS-Hardened Images or hire an expert. 
 - Say it with me, GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
 - Zero Trust Should be followed with People,Process & Products.
-=======
-- CMD.EXE & POWERSHELL.EXE should not open on employee laptops (GPO)
-- Block .LNK files entirely if not used by org users. (GPO)
-- Prefer Windows 10 on laptops and Desktops when possible, even better is RHEL desktop when windows specific applications are not required.
-- Prefer RHEL Servers over Windows, if Very High Risk Organization then use Gentoo with [Patches](https://grsecurity.net/features) as server.
-- Always use SELinux policies (On RHEL & Gentoo) and use whitelist methodology (BLOCK EVERYTHING BY DEFAULT).
-- For RHEL servers prefer using Pre-CIS-Hardened Images.
-- Say it with me GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
->>>>>>> 2ff0ae3d3bbf26ff197d965847677fc17e6a8103
 
 More to come soon...
 
