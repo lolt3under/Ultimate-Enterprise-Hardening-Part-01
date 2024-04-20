@@ -37,7 +37,7 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 	-  File Extension: (extension)
 	-  Associated Program: %windir%\system32\notepad.exe
 	-  Set as default: Enabled.
-- [Preventing activation of OLE packages](https://cloudblogs.microsoft.com/microsoftsecure/2016/06/14/wheres-the-macro-malware-author-are-now-using-ole-embedding-to-deliver-malicious-files/?source=mmpc) in Office with the PackagerPrompt registry setting.
+- [Preventing activation of OLE packages and other eight hardening](https://learn.microsoft.com/en-us/compliance/essential-eight/e8-app-harden) in Office with the PackagerPrompt registry setting.
 <<<<<<< HEAD
 - CMD.EXE & POWERSHELL.EXE (all variants and the associated DLL) should not open/execute on Standard Employee Laptops (GPO)
 - Block .LNK files entirely if not used by org users otherwise mix blacklisting & whitelisting to control. (GPO)
