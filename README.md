@@ -52,7 +52,6 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 - Always use SELinux policies (On RHEL & Gentoo) and use whitelist methodology (BLOCK EVERYTHING BY DEFAULT).
 - For RHEL servers prefer using Pre-CIS-Hardened Images or hire an expert. 
 - Say it with me, GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
-- Zero Trust Should be followed with People,Process & Products.
 
 ### Advanced 1: Linux/*Nix/BSD Systems Hardening Checklist
 
@@ -158,3 +157,8 @@ fs.protected_hardlinks=1
 fs.protected_fifos=2 
 fs.protected_regular=2
 ```
+
+NOTE: Windows & Mac Specific Guides coming soon, as well as detailed host firewall setup for all three platforms.
+
+<h1><center>- Zero Trust Should be followed with People,Process & Products.
+</center></h1>
