@@ -12,7 +12,12 @@ This document summarizes the information related to Hardening in a common enterp
 
 Something's missing? Create a Pull Request and add it. Get your name in the contributers section!!
 
-### The Basics
+### Contributers
+
+No contributers yet! Be the first one ! reach out at G4@365erx.onmicrosoft.com
+
+
+### Basics
 
 - System Upgrades/Updates/patches are **NOT** always the best deal, excersise caution when updating/upgrading -- ie. Supply Chain Attacks.
 - Use [AppLocker](https://technet.microsoft.com/en-us/library/dd759117(v=ws.11).aspx) to block exec content from running in user locations (home dir, profile path, temp, etc) -- ONLY FOR Windows 7 & Windows Server 2008 R2 Systems.
