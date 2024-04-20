@@ -45,7 +45,7 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 - Prefer Windows 10 on laptops and Desktops when possible, even better is RHEL Desktop/Laptop edition when Windows 10/11/7 specific applications are not required.
 - Avoid Windows 7 (any build) and Linux Kernel (any patch) < 4.4 like the plague.
 - Prefer RHEL Servers over Windows, if Very High Risk Organization (GOV/MIL/INT etc.) then use Gentoo ([Compile your own kernel](https://www.odi.ch/prog/kernel-config.php)) with [Patches](https://grsecurity.net/features) as server. 
-- Always use SELinux policies (On RHEL & Gentoo) and use whitelist methadology (BLOCK EVERYTHING BY DEFAULT).
+- Always use SELinux policies (On RHEL & Gentoo) and use whitelist methodology (BLOCK EVERYTHING BY DEFAULT).
 - For RHEL servers prefer using Pre-CIS-Hardened Images or hire an expert. 
 - Say it with me, GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
 - Zero Trust Should be followed with People,Process & Products.
