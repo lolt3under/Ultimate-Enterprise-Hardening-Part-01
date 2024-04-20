@@ -160,5 +160,5 @@ fs.protected_regular=2
 
 NOTE: Windows & Mac Specific Guides coming soon, as well as detailed host firewall setup for all three platforms.
 
-<h1><center>- Zero Trust Should be followed with People,Process & Products.
+<h1><center>Zero Trust Should be followed with People,Process & Products.
 </center></h1>
