@@ -38,7 +38,6 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 	-  Associated Program: %windir%\system32\notepad.exe
 	-  Set as default: Enabled.
 - [Preventing activation of OLE packages and other eight hardening](https://learn.microsoft.com/en-us/compliance/essential-eight/e8-app-harden) in Office with the PackagerPrompt registry setting.
-<<<<<<< HEAD
 - CMD.EXE & POWERSHELL.EXE (all variants and the associated DLL) should not open/execute on Standard Employee Laptops (GPO)
 - Block .LNK files entirely if not used by org users otherwise mix blacklisting & whitelisting to control. (GPO)
 - Python3, Ruby, GOLang and Windows C++ SDKs should not be installed on Standard Employee Laptops.
@@ -50,6 +49,73 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 - Say it with me, GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
 - Zero Trust Should be followed with People,Process & Products.
 
-More to come soon...
+### Linux/*Nix/BSD Systems Hardening Checklist
 
+1. **Host Information Documentation**:
+   - Machine name
+   - IP address (Internal & External)
+   - Mac address (Virtual or Physical)
+   - Name of the workforce who is doing the hardening
+   - Date of Documentation
+   - Asset Number
 
+2. **BIOS/UEFI Protection**:
+   - Protect the BIOS/UEFI with a password.
+   - Prefer non-systemd init systems.
+   - Use musl as the default C library.
+   - Prefer LibreSSL over OpenSSL.
+   - Configure boot order to prevent unauthorized booting.
+   - Prefer BIOS over UEFI.
+   - Adopt a 3-month audit cycle.
+   - Prefer single boot systems.
+   - Configure boot parameters.
+
+3. **Operating System Preferences**:
+   - Prefer Gentoo Linux for desktop use.
+   - Prefer OpenBSD for server use.
+   - Avoid using Processor Microcode.
+   - Adopt hardened profiles for operating systems.
+
+4. **Filesystem Hardening**:
+   - Create separate partitions with specific options.
+   - Bind mount directories.
+   - Use LUKS Encryption for disk encryption.
+
+5. **Kernel Hardening**:
+   - Adopt self-compiled kernels.
+   - Prefer LTS Kernels over Latest Stable.
+   - Configure kernel settings with Sysctl functionality.
+
+6. **Network Security and Firewall Configuration**:
+   - Limit connections to authorized users.
+   - Disable IP forwarding.
+   - Enable bad error message protection.
+   - Configure Remote Administration Via SSH Protocol.
+   - Configure network time protocol (NTP).
+   - Enable TCP/SYN
+
+ cookies.
+   - Use Hybrid-listing in firewall.
+   - Prefer pf firewall system.
+
+7. **PAM Configuration**:
+   - Ensure secure PAM configuration.
+   - Upgrade password hashing algorithm to SHA-512.
+   - Set complex password creation requirements.
+   - Restrict root login.
+
+8. **Implement Linux Security Modules (LSM)**:
+   - Enable SELinux, Smack, TOMOYO, Landlock during self-compilation.
+
+9. **Optional Patches**:
+   - Prefer optional patches from [grsecurity.net](https://grsecurity.net/).
+
+### Annexure 1
+
+Contents of /etc/sysctl.conf :
+```
+kernel.kptr_restrict=2 kernel.dmesg_restrict=1
+kernel.printk=3 3 3 3 kernel.unprivileged_bpf_disabled=1 net.core.bpf_jit_harden=2 dev.tty.ldisc_autoload=0 vm.unprivileged_userfaultfd=0 kernel.kexec_load_disabled=1 kernel.sysrq=4 kernel.unprivileged_userns_clone=0 kernel.perf_event_paranoid=3 net.ipv4.tcp_syncookies=1 net.ipv4.tcp_rfc1337=1 net.ipv4.conf.all.rp_filter=1 net.ipv4.conf.default.rp_filter=1 net.ipv4.conf.all.accept_redirects=0 net.ipv4.conf.default.accept_redirects=0 net.ipv4.conf.all.secure_redirects=0 net.ipv4.conf.default.secure_redirects=0 net.ipv6.conf.all.accept_redirects=0 net.ipv6.conf.default.accept_redirects=0 net.ipv4.conf.all.send_redirects=0 net.ipv4.conf.default.send_redirects=0 net.ipv4.icmp_echo_ignore_all=1 net.ipv4.conf.all.accept_source_route=0 net.ipv4.conf.default.accept_source_route=0 net.ipv6.conf.all.accept_source_route=0 net.ipv6.conf.default.accept_source_route=0 net.ipv6.conf.all.accept_ra=0 net.ipv6.conf.default.accept_ra=0 net.ipv4.tcp_sack=0
+net.ipv4.tcp_dsack=0 net.ipv4.tcp_fack=0 kernel.yama.ptrace_scope=2
+vm.mmap_rnd_bits=32 vm.mmap_rnd_compat_bits=16 fs.protected_symlinks=1 fs.protected_hardlinks=1 fs.protected_fifos=2 fs.protected_regular=2
+```
