@@ -38,6 +38,7 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 	-  Associated Program: %windir%\system32\notepad.exe
 	-  Set as default: Enabled.
 - [Preventing activation of OLE packages](https://cloudblogs.microsoft.com/microsoftsecure/2016/06/14/wheres-the-macro-malware-author-are-now-using-ole-embedding-to-deliver-malicious-files/?source=mmpc) in Office with the PackagerPrompt registry setting.
+<<<<<<< HEAD
 - CMD.EXE & POWERSHELL.EXE (all variants and the associated DLL) should not open/execute on Standard Employee Laptops (GPO)
 - Block .LNK files entirely if not used by org users otherwise mix blacklisting & whitelisting to control. (GPO)
 - Python3, Ruby, GOLang and Windows C++ SDKs should not be installed on Standard Employee Laptops.
@@ -48,6 +49,15 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 - For RHEL servers prefer using Pre-CIS-Hardened Images or hire an expert. 
 - Say it with me, GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
 - Zero Trust Should be followed with People,Process & Products.
+=======
+- CMD.EXE & POWERSHELL.EXE should not open on employee laptops (GPO)
+- Block .LNK files entirely if not used by org users. (GPO)
+- Prefer Windows 10 on laptops and Desktops when possible, even better is RHEL desktop when windows specific applications are not required.
+- Prefer RHEL Servers over Windows, if Very High Risk Organization then use Gentoo with [Patches](https://grsecurity.net/features) as server.
+- Always use SELinux policies (On RHEL & Gentoo) and use whitelist methodology (BLOCK EVERYTHING BY DEFAULT).
+- For RHEL servers prefer using Pre-CIS-Hardened Images.
+- Say it with me GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
+>>>>>>> 2ff0ae3d3bbf26ff197d965847677fc17e6a8103
 
 More to come soon...
 
