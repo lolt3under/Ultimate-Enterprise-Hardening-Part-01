@@ -14,13 +14,13 @@ Something's missing? Create a Pull Request and add it. Get your name in the cont
 
 ### The Basics
 
-- System Upgrades/Updates are **NOT** always the best deal, excersise caution when updating/upgrading -- ie. Supply Chain Attacks
+- System Upgrades/Updates/patches are **NOT** always the best deal, excersise caution when updating/upgrading -- ie. Supply Chain Attacks.
 - Use [AppLocker](https://technet.microsoft.com/en-us/library/dd759117(v=ws.11).aspx) to block exec content from running in user locations (home dir, profile path, temp, etc) -- ONLY FOR Windows 7 & Windows Server 2008 R2 Systems.
 - Manage PowerShell execution via constrained language mode.
 - Make sure PowerShell Script execution is blocked across the organization.
 - Enable [PowerShell logging](https://www.fireeye.com/blog/threat-research/2016/02/greater_visibilityt.html) (v3+) & command process logging.
 - [Block Office macros](https://blogs.technet.microsoft.com/mmpc/2016/03/22/new-feature-in-office-2016-can-block-macros-and-help-prevent-infection/) (Windows & Mac) on content downloaded from the Internet.
-- Deploy security tooling that monitors for suspicious behavior. Consider using [WEF](https://blogs.technet.microsoft.com/jepayne/2015/11/23/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem/) to forward only interesting events to your SIEM or logging system (more on this later).
+- Deploy security tooling that monitors for suspicious behavior. Consider using [WEF](https://blogs.technet.microsoft.com/jepayne/2015/11/23/monitoring-what-matters-windows-event-forwarding-for-everyone-even-if-you-already-have-a-siem/) to forward only interesting events to your SIEM or logging system (more on this later in part-02).
 - Limit capability by blocking/restricting attachments via email/download:
 	-  Executables extensions:
 	-  (ade, adp, ani, bas, bat, chm, cmd, com, cpl,
@@ -38,13 +38,16 @@ url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif, etc.)
 	-  Associated Program: %windir%\system32\notepad.exe
 	-  Set as default: Enabled.
 - [Preventing activation of OLE packages](https://cloudblogs.microsoft.com/microsoftsecure/2016/06/14/wheres-the-macro-malware-author-are-now-using-ole-embedding-to-deliver-malicious-files/?source=mmpc) in Office with the PackagerPrompt registry setting.
-- CMD.EXE & POWERSHELL.EXE should not open on employee laptops (GPO)
-- Block .LNK files entirely if not used by org users. (GPO)
-- Prefer Windows 10 on laptops and Desktops when possible, even better is RHEL desktop when windows specific applications are not required.
-- Prefer RHEL Servers over Windows, if Very High Risk Organization then use Gentoo with [Patches](https://grsecurity.net/features) as server.
+- CMD.EXE & POWERSHELL.EXE (all variants and the associated DLL) should not open/execute on Standard Employee Laptops (GPO)
+- Block .LNK files entirely if not used by org users otherwise mix blacklisting & whitelisting to control. (GPO)
+- Python3, Ruby, GOLang and Windows C++ SDKs should not be installed on Standard Employee Laptops.
+- Prefer Windows 10 on laptops and Desktops when possible, even better is RHEL Desktop/Laptop edition when Windows 10/11/7 specific applications are not required.
+- Avoid Windows 7 (any build) and Linux Kernel (any patch) < 4.4 like the plague.
+- Prefer RHEL Servers over Windows, if Very High Risk Organization (GOV/MIL/INT etc.) then use Gentoo ([Compile your own kernel](https://www.odi.ch/prog/kernel-config.php)) with [Patches](https://grsecurity.net/features) as server. 
 - Always use SELinux policies (On RHEL & Gentoo) and use whitelist methadology (BLOCK EVERYTHING BY DEFAULT).
-- For RHEL servers prefer using Pre-CIS-Hardened Images.
-- Say it with me GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
+- For RHEL servers prefer using Pre-CIS-Hardened Images or hire an expert. 
+- Say it with me, GPO! GPO!! GPO!!!, always use GPO to restrict (be as strict as possible), unless approvals are there **DO NOT PROVIDE ACCESS.**
+- Zero Trust Should be followed with People,Process & Products.
 
 More to come soon...
 
